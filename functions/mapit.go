@@ -35,3 +35,19 @@ func Maps(n int) string {
 	defer file.Close()
 	return str
 }
+
+func ProcessString(slice []int)[]string{
+	var str string
+	var results []string
+	for _, number := range slice {
+		str+=Maps(number) 
+	}
+	results = append(results, str)
+	return results
+}
+func PrintStrings(str []string){
+	for _, ch := range str {
+		fmt.Println(ch)
+	}
+
+}
