@@ -12,7 +12,7 @@ each character line contents are concatenated into a single string
 the new string is returned as a line.
 */
 
-func Maps(n int) string {
+func Maps(n int)string{
 	file, err := os.Open("standard.txt")
 	if err != nil {
 		fmt.Println(err)
@@ -24,12 +24,11 @@ func Maps(n int) string {
 		line = scanner.Text()
 		count++
 		ascMap := make(map[int]string)
+		ascMap[count] = line
 		if count == n {
-			for _, ch := range line {
-				str += string(ch)
-			}
+			str = ascMap[n]
+			
 		}
-		ascMap[n] = str
 	}
 	
 	defer file.Close()
@@ -37,12 +36,12 @@ func Maps(n int) string {
 }
 
 func ProcessString(slice []int)[]string{
-	var str string
 	var results []string
+	var str string
 	for _, number := range slice {
-		str+=Maps(number) 
+		str = Maps(number)
+		results = append(results, str)
 	}
-	results = append(results, str)
 	return results
 }
 func PrintStrings(str []string){
