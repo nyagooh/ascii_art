@@ -1,5 +1,6 @@
 package functions
 
+// import "fmt"
 
 // liner function calculates mathematically the line number of each rune contained in the input string.
 func FndLine(r rune) []int {
@@ -13,14 +14,14 @@ func FndLine(r rune) []int {
 }
 
 func ProcessLine(line []string) []int {
-	var result[]int
+	var result []int
 	for _, values := range line {
 		for _, char := range values {
-		lineNumbers := FndLine(char)
-		result = append(result, lineNumbers...)
-		
-	}
+			lineNumbers := FndLine(char)
+			result = append(result, lineNumbers...)
+
+		}
 	}
 	// fmt.Println(result)
-return result
+	return result
 }
