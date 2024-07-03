@@ -22,10 +22,15 @@ func main() {
 		return
 	}
 	input := os.Args[1]
-	printable := art.NonPrintable(input)
-	lines := strings.Split(printable, "\\n")
-	result := art.ProcessLine(lines)
-	result2 := art.ProcessString(result)
-	art.PrintStrings(result2)
-	fmt.Println()
+	art.NonPrintable(input)
+	lines := strings.Split(input, "\\n")
+	for _, line := range lines {
+		if line != "" {
+			result := art.ProcessLine(line)
+			result2 := art.ProcessString(result)
+			art.PrintStrings(result2)
+		} else {
+			fmt.Println()
+		}
+	}
 }

@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func NonPrintable(str string) string {
+func NonPrintable(str string){
 	for _, ch := range str {
 		if !(ch >= 32 && ch <= 126) {
 			fmt.Println("An unprinttable character was detected in your string")
@@ -17,5 +17,4 @@ func NonPrintable(str string) string {
 			str = strings.ReplaceAll(str, "\\b", " ")
 		}
 	}
-	return str
 }
